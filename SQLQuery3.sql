@@ -1,0 +1,11 @@
+﻿
+
+ 
+USE [master]
+GO
+
+ALTER DATABASE tempdb
+	MODIFY FILE ( NAME = N'tempdev', SIZE= 30240MB, FILEGROWTH = 40240MB, MAXSIZE= 80000 )
+GO
+
+

@@ -1,0 +1,11 @@
+D:\SAPSync\SAPSync\SAPSync\bin\Release\SAPSync.exe.config
+D:\SAPSync\SAPSync\SAPSync\bin\Release\SAPSync.exe
+D:\SAPSync\SAPSync\SAPSync\bin\Release\SAPSync.pdb
+D:\SAPSync\SAPSync\SAPSync\bin\Release\SAPSync.xml
+D:\SAPSync\SAPSync\SAPSync\bin\Release\MySql.Data.dll
+D:\SAPSync\SAPSync\SAPSync\obj\Release\SAPSync.Resources.resources
+D:\SAPSync\SAPSync\SAPSync\obj\Release\SAPSync.SAPSyncForm.resources
+D:\SAPSync\SAPSync\SAPSync\obj\Release\SAPSync.vbproj.GenerateResource.Cache
+D:\SAPSync\SAPSync\SAPSync\obj\Release\SAPSync.exe
+D:\SAPSync\SAPSync\SAPSync\obj\Release\SAPSync.xml
+D:\SAPSync\SAPSync\SAPSync\obj\Release\SAPSync.pdb
