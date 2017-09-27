@@ -4233,6 +4233,7 @@ Public Class SAPSyncForm
     End Sub
 
     Private Sub ButtonTest_Click(sender As Object, e As EventArgs)
+        ' Agregue este comentario
         '  ajustesNegativosXFactura(3, "douglas", "G$", 1, "02", "19/01/2017", "Sistema")
     End Sub
 
