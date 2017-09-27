@@ -4726,7 +4726,8 @@ Public Class SAPSyncForm
     End Sub
 
     Private Sub ButtonCall_Click(sender As Object, e As EventArgs) Handles ButtonCall.Click
-        ajustesNegativosXFactura(431, "mathiasv", "G$", 1, "02", Date.Now, "%")
+        ' Anule esta funcion para probar el funcionamiento de Git
+        ' ajustesNegativosXFactura(431, "mathiasv", "G$", 1, "02", Date.Now, "%")
     End Sub
 
     Private Sub ButtonFraccionamientos_Click(sender As Object, e As EventArgs) Handles ButtonFraccionamientos.Click
