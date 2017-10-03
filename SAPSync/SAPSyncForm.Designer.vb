@@ -100,12 +100,13 @@ Partial Class SAPSyncForm
         Me.TextBoxFolio = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.ComboBoxTipo = New System.Windows.Forms.ComboBox()
+        Me.serverIni = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'ButtonConnect
         '
-        Me.ButtonConnect.Location = New System.Drawing.Point(170, 27)
+        Me.ButtonConnect.Location = New System.Drawing.Point(171, 29)
         Me.ButtonConnect.Name = "ButtonConnect"
         Me.ButtonConnect.Size = New System.Drawing.Size(286, 32)
         Me.ButtonConnect.TabIndex = 0
@@ -524,8 +525,6 @@ Partial Class SAPSyncForm
         'CheckBoxAutoConnect
         '
         Me.CheckBoxAutoConnect.AutoSize = True
-        Me.CheckBoxAutoConnect.Checked = True
-        Me.CheckBoxAutoConnect.CheckState = System.Windows.Forms.CheckState.Checked
         Me.CheckBoxAutoConnect.Location = New System.Drawing.Point(290, 101)
         Me.CheckBoxAutoConnect.Name = "CheckBoxAutoConnect"
         Me.CheckBoxAutoConnect.Size = New System.Drawing.Size(94, 17)
@@ -731,11 +730,21 @@ Partial Class SAPSyncForm
         Me.ComboBoxTipo.TabIndex = 63
         Me.ComboBoxTipo.Text = "No Modificar"
         '
+        'serverIni
+        '
+        Me.serverIni.Location = New System.Drawing.Point(544, 246)
+        Me.serverIni.Name = "serverIni"
+        Me.serverIni.Size = New System.Drawing.Size(75, 23)
+        Me.serverIni.TabIndex = 64
+        Me.serverIni.Text = "Iniciar Servidor"
+        Me.serverIni.UseVisualStyleBackColor = True
+        '
         'SAPSyncForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(929, 761)
+        Me.ClientSize = New System.Drawing.Size(929, 742)
+        Me.Controls.Add(Me.serverIni)
         Me.Controls.Add(Me.ComboBoxTipo)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.TextBoxFolio)
@@ -878,5 +887,6 @@ Partial Class SAPSyncForm
     Friend WithEvents TextBoxFolio As System.Windows.Forms.TextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents ComboBoxTipo As System.Windows.Forms.ComboBox
+    Friend WithEvents serverIni As System.Windows.Forms.Button
 
 End Class

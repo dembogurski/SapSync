@@ -5278,6 +5278,21 @@ Public Class SAPSyncForm
             log("Error TimerCancelPagos: " & ex.StackTrace)
         End Try
     End Sub
+
+    Private Sub iniciarServidor(sender As Object, e As EventArgs) Handles serverIni.Click
+        Dim servInvoker As MethodInvoker = New MethodInvoker(AddressOf Me.iniciarServidor)
+        servInvoker.BeginInvoke(Nothing, Nothing)
+        'Me.Invoke(servInvoker)
+    End Sub
+    Private Function iniciarServidor()
+        Dim server As SyncServer = New SyncServer()
+        server.start()
+    End Function
+    Public Sub test()
+        Dim mensaje As String = "Exitosa"
+        Debug.WriteLine(String.Format("Conexion {0}", mensaje))
+    End Sub
+
 End Class
 
 
