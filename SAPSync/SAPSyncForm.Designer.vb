@@ -23,6 +23,7 @@ Partial Class SAPSyncForm
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SAPSyncForm))
         Me.ButtonConnect = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -100,7 +101,6 @@ Partial Class SAPSyncForm
         Me.TextBoxFolio = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.ComboBoxTipo = New System.Windows.Forms.ComboBox()
-        Me.serverIni = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -730,21 +730,11 @@ Partial Class SAPSyncForm
         Me.ComboBoxTipo.TabIndex = 63
         Me.ComboBoxTipo.Text = "No Modificar"
         '
-        'serverIni
-        '
-        Me.serverIni.Location = New System.Drawing.Point(544, 246)
-        Me.serverIni.Name = "serverIni"
-        Me.serverIni.Size = New System.Drawing.Size(75, 23)
-        Me.serverIni.TabIndex = 64
-        Me.serverIni.Text = "Iniciar Servidor"
-        Me.serverIni.UseVisualStyleBackColor = True
-        '
         'SAPSyncForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(929, 742)
-        Me.Controls.Add(Me.serverIni)
         Me.Controls.Add(Me.ComboBoxTipo)
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.TextBoxFolio)
@@ -803,6 +793,7 @@ Partial Class SAPSyncForm
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.ButtonConnect)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "SAPSyncForm"
         Me.Text = "SAPSyncForm"
         Me.Panel1.ResumeLayout(False)
@@ -887,6 +878,5 @@ Partial Class SAPSyncForm
     Friend WithEvents TextBoxFolio As System.Windows.Forms.TextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents ComboBoxTipo As System.Windows.Forms.ComboBox
-    Friend WithEvents serverIni As System.Windows.Forms.Button
 
 End Class

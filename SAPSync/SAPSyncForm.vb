@@ -1,13 +1,9 @@
-﻿
-
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 Imports System.Data.SqlClient
 Imports Microsoft.VisualBasic
 Imports System.Globalization
 Imports System.IO
 Imports System.Threading
-
-
 
 
 Public Class SAPSyncForm
@@ -84,7 +80,7 @@ Public Class SAPSyncForm
     End Sub
 
     Public Function conectar()
-        Dim habilitar As Boolean = True
+        Dim habilitar As Boolean = False
         Try
             TimerConnect.Enabled = False
 
@@ -131,7 +127,7 @@ Public Class SAPSyncForm
 
                 MSSQLConnectionString = "Data Source=" & server.Text & ";Initial Catalog=" & company & ";Persist Security Info=True;User ID=sa;Password=" & ms_passw.Text & ""
 
-                iniciarTimmers()
+                'iniciarTimmers()
 
 
                 'Timers
@@ -177,6 +173,9 @@ Public Class SAPSyncForm
             End If
             ButtonConnect.Enabled = False
             conectado = True
+            ' Inicia Servidor web
+            Dim servInvoker As MethodInvoker = New MethodInvoker(AddressOf Me.iniciarServidor)
+            servInvoker.BeginInvoke(Nothing, Nothing)
 
             logTextArea.Text = ""
             Return True
@@ -5173,7 +5172,6 @@ Public Class SAPSyncForm
                         End If
                     End If
 
-
                     Dim nErr As Long
                     Dim errMsg As String = ""
 
@@ -5279,18 +5277,35 @@ Public Class SAPSyncForm
         End Try
     End Sub
 
-    Private Sub iniciarServidor(sender As Object, e As EventArgs) Handles serverIni.Click
-        Dim servInvoker As MethodInvoker = New MethodInvoker(AddressOf Me.iniciarServidor)
-        servInvoker.BeginInvoke(Nothing, Nothing)
-        'Me.Invoke(servInvoker)
+  
+    Private Sub iniciarServidor()
+        Dim server As SyncServer = New SyncServer(Me.MySQLConnectionString, Me.MSSQLConnectionString, oCnn)
+        Try
+            'logTextArea.AppendText("Iniciando Servidor")
+            Dim ThreadTest As New Thread(AddressOf server.start)
+            ThreadTest.Start()
+
+        Catch ex As Exception
+            Debug.WriteLine("Error TimerCancelPagos: " & ex.StackTrace)
+        End Try
     End Sub
-    Private Function iniciarServidor()
-        Dim server As SyncServer = New SyncServer()
-        server.start()
-    End Function
-    Public Sub test()
+    Public Function test() As Dictionary(Of String, String)
+        Dim respuesta As New Dictionary(Of String, String)
         Dim mensaje As String = "Exitosa"
         Debug.WriteLine(String.Format("Conexion {0}", mensaje))
+        respuesta("status") = "ok"
+        respuesta("msj") = String.Format("Ahora {0}", DateTime.Now.ToString(New CultureInfo("en-GB")))
+
+        Return respuesta
+    End Function
+
+    Public Sub test_Tick()
+        Try
+            Dim ThreadTest As New Thread(AddressOf Me.test)
+            ThreadTest.Start()
+        Catch ex As Exception
+            Debug.WriteLine("Error TimerCancelPagos: " & ex.StackTrace)
+        End Try
     End Sub
 
 End Class
